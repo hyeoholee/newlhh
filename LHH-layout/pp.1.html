@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>241010.webpractice</title>
+    <style>
+      /* 전체 래퍼 설정 */
+      #wrap {
+        width: 100%; /* 화면 크기에 맞게 조정 */
+        max-width: 1440px; /* 최대 너비 설정 */
+        margin: 0 auto; /* 중앙 정렬 */
+        font-size: 14px; /* 기본 폰트 사이즈 설정 */
+        color: #4de785; /* 텍스트 색상 설정 */
+      }
+
+      /* 헤더 스타일 설정 */
+      #header {
+        width: 100%; /* 화면 크기에 맞게 조정 */
+        height: 64px; /* 헤더 높이 설정 */
+        width: 1440px; /* 최대 너비 설정 */
+        background-color: #2d374b; /* 배경 색상 설정 */
+        line-height: 64px; /* 수직 가운데 정렬 */
+        font-size: large; /* 폰트 사이즈 설정 */
+        font-weight: 1000; /* 폰트 굵기 설정 */
+      }
+
+      /* 메뉴 스타일 설정 */
+      #menu {
+        display: inline-block; /* 메뉴를 헤더와 같은 줄에 표시 */
+        margin-left: 224px; /* 메뉴 간의 간격 추가 */
+      }
+
+      /* 메뉴 링크 스타일 설정 */
+      #menu a {
+        color: #ffffff; /* 메뉴 텍스트 색상 */
+        margin: 0 10px; /* 메뉴 항목 간의 간격 */
+        text-decoration: none; /* 밑줄 제거 */
+        font-weight: 100; /* 메뉴 항목의 폰트 굵기 설정 */
+        font-size: small; /* 폰트 사이즈 설정 */
+      }
+
+      /* 이미지 스타일 설정 */
+      #body1 img {
+        position: absolute; /* 절대 위치 지정 */
+        top: 55%; /* 세로 가운데 */
+        left: 50%; /* 가로 가운데 */
+        transform: translate(-50%, -50%); /* 정확한 가운데 정렬 */
+        max-width: 100%; /* 화면 크기에 맞게 조정 */
+        max-height: 100; /* 최대 높이 제한 */
+        opacity: 100; /* 투명도 조정 */
+      }
+
+      /* 큰 텍스트 스타일 설정 */
+      .large-text {
+        position: absolute; /* 절대 위치 지정 */
+        top: 13%; /* 세로 위치 설정 */
+        left: 50%; /* 가로 가운데 */
+        transform: translate(-50%, -50%); /* 정확한 가운데 정렬 */
+        color: white; /* 텍스트 색상 설정 */
+        font-size: 26px; /* 텍스트 크기 설정 */
+        font-weight: 550; /* 텍스트 굵기 설정 */
+        line-height: 1.5; /* 행간 조정 */
+      }
+
+      /* 바디 스타일 설정 */
+      #body1 {
+        width: 1440px; /* 최대 너비 설정 */
+        height: 512px; /* 바디 높이 설정 */
+        background-color: #2d374b; /* 배경 색상 설정 */
+        font-weight: 100; /* 폰트 굵기 설정 */
+        text-align: center; /* 텍스트 가운데 정렬 */
+        position: relative; /* 자식 요소 위치 조정을 위해 필요 */
+      }
+      /* 박스 크기 표시 */
+      .body1:after {
+        content: attr(data-size); /* 데이터 속성에서 크기 가져오기 */
+        position: absolute; /* 절대 위치 지정 */
+        bottom: 10px; /* 아래쪽 여백 */
+        right: 10px; /* 오른쪽 여백 */
+        background-color: rgba(0, 0, 0, 0.7); /* 반투명 배경색 */
+        color: white; /* 텍스트 색상 */
+        padding: 12px; /* 여백 추가 */
+        border-radius: 5px; /* 모서리 둥글게 */
+        font-size: 12px; /* 폰트 크기 설정 */
+      }
+
+      /* 새로운 콘텐츠 박스 스타일 */
+      .content-box {
+        width: 1024px; /* 너비 설정 */
+        background-color: #2d374b; /* 배경 색상 설정 */
+        border: 1px solid #4de785; /* 구분선 색상 */
+        position: relative; /* 자식 요소 위치 조정을 위해 필요 */
+        box-sizing: border-box; /* 패딩과 경계 두께를 포함하여 너비 계산 */
+      }
+
+      /* 1024px 높이 박스 스타일 */
+      .content-box {
+        width: 1024px;
+        height: 623px;
+        background-color: #2d374b; /* 배경 색상 설정 */
+        border: 1px solid #4de785; /* 구분선 색상 */
+        left: 208px; /* 왼쪽 여백 추가 */
+      }
+
+      /* 박스 크기 표시 */
+      .content-box::after {
+        content: attr(data-size); /* 데이터 속성에서 크기 가져오기 */
+        position: absolute; /* 절대 위치 지정 */
+        bottom: 10px; /* 아래쪽 여백 */
+        right: 10px; /* 오른쪽 여백 */
+        background-color: rgba(0, 0, 0, 0.7); /* 반투명 배경색 */
+        color: white; /* 텍스트 색상 */
+        padding: 12px; /* 여백 추가 */
+        border-radius: 5px; /* 모서리 둥글게 */
+        font-size: 12px; /* 폰트 크기 설정 */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <span style="margin-left: 210px">CodeCrefter</span>
+
+        <nav id="menu">
+          <a href="#">Curriculums</a>
+          <!-- 커리큘럼 링크 -->
+          <a href="#">Instructors</a>
+          <!-- 강사 링크 -->
+          <a href="#">Testimonials</a>
+          <!-- 후기 링크 -->
+          <a href="#">Contact</a>
+          <!-- 연락처 링크 -->
+        </nav>
+      </div>
+      <div id="body1">
+        <img src="1.png" alt="이미지" />
+        <!-- 첫 번째 이미지 -->
+        <div class="large-text">
+          Empowering Your Future <br />Through Innovative Development Education
+        </div>
+        <!-- 텍스트 내용 -->
+      </div>
+
+      <!-- 새로운 콘텐츠 박스 추가 -->
+      <div class="content-box box-1024" data-size="Size: 1024px x 623px"></div>
+      <!-- 1024px 높이 박스 -->
+    </div>
+    <script>
+      // 이미지와 텍스트 배열 정의
+      const images = [
+        {
+          src: "1.png",
+          text: "Empowering Your Future <br>Through Innovative Development Education",
+        },
+        {
+          src: "2.png",
+          text: "Unlock Your Potential with Expert-Led, Hands-On Learning Experiences",
+        },
+        {
+          src: "3.png",
+          text: "Choose Us for a Tailored Curriculum That Prepares You for Real-World Success",
+        },
+      ];
+
+      let currentIndex = 0; // 현재 인덱스 초기화
+
+      // 콘텐츠 변경 함수 정의
+      function changeContent() {
+        currentIndex = (currentIndex + 1) % images.length; // 인덱스 증가 및 순환
+        const imgElement = document.querySelector("#body1 img"); // 이미지 요소 선택
+        const textElement = document.querySelector(".large-text"); // 텍스트 요소 선택
+        imgElement.src = images[currentIndex].src; // 이미지 소스 변경
+        textElement.innerHTML = images[currentIndex].text; // 텍스트 내용 변경
+      }
+
+      setInterval(changeContent, 3000); // 3초마다 콘텐츠 변경
+    </script>
+  </body>
+</html>

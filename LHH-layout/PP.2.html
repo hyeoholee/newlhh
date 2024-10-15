@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PP</title>
+  <meta name="description" content="CodeCrafter is a platform for learning web development." />
+  <style>
+    /* 기본 스타일 설정 */
+    body {
+      margin: 0;
+      background-color: #2d374b;
+      color: #ffffff;
+    }
+
+    #body1 {
+  position: relative; /* 자식 요소의 절대 위치를 기준으로 설정 */
+  width: 1440px; /* 최대 너비 설정 */
+  height: 512px; /* 바디 높이 설정 */
+  background-color: #2d374b; /* 배경 색상 설정 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+#body1 img {
+  display: block; /* 블록 요소로 설정하여 마진을 적용할 수 있도록 함 */
+  margin: 0 auto; /* 수평 중앙 정렬 */
+  position: absolute; /* 절대 위치로 설정 */
+  bottom: 400px; /* 이미지가 아래쪽에서 50픽셀 위에 위치하도록 설정 */
+  left: 50%; /* 중앙 정렬 */
+  transform: translateX(-50%); /* 중앙 정렬을 위한 변환 */
+  max-width: 30%; /* 최대 너비를 30%로 설정 */
+  height: auto; /* 비율에 맞게 높이 자동 조정 */
+}
+
+.large-text {
+  position: absolute; /* 절대 위치 지정 */
+  top: -400px; /* 텍스트를 이미지 위쪽으로 이동 (원하는 위치로 조정) */
+  left: 50%; /* 가로 중앙 정렬 */
+  transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+  font-size: 33px; /* 큰 글씨 크기 설정 */
+  font-weight: 800; /* 글자 두께를 800으로 설정 */
+  color: white; /* 글자 색상을 하얗게 설정 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+
+
+
+
+    /* 리스트 스타일 제거 */
+    ul {
+      list-style: none; /* 리스트 아이템의 기본 점이나 번호를 제거하여 깔끔한 디자인을 유지 */
+      padding: 0; /* 기본 패딩을 제거하여 리스트가 부모 요소에 맞게 정렬되도록 함 */
+    }
+
+    /* 섹션 스타일 */
+    section {
+      height: 500px; /* 각 섹션의 높이를 500픽셀로 설정하여 충분한 콘텐츠 공간을 확보 */
+      scroll-margin-top: 40px; /* 스크롤 할 때 상단 여백을 40픽셀로 설정하여 타이틀 바와 겹치지 않도록 함 */
+    }
+
+    .title_bar_web {
+  position: fixed; /* 화면 상단에 고정 */
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  display: flex;
+  align-items: center;
+  height: 64px;
+  width: 100%;
+  background-color: #2d374b;
+  z-index: 1000; /* 다른 요소들 위에 표시되도록 설정 */
+}
+
+.menu {
+  display: flex;
+  margin-left: 224px; /* 메뉴 간의 간격 추가 */
+  
+  gap: 50px; /* 메뉴 아이템 간의 간격 */
+}
+
+    /* 로고 스타일 */
+    .logo {
+      width: 121px; 
+      height: 16px; 
+      margin-left: 208px; 
+    }
+
+
+    /* 메뉴 링크 스타일 */
+    .menu a {
+      color: white; 
+      margin: 0 10px; /* 메뉴 항목 간의 간격 */
+
+      text-decoration: none; 
+    }
+
+
+    /* 슬라이드 제목 스타일 */
+    .slide_title {
+      display: block; /* 블록 요소로 설정하여 전체 너비를 차지하도록 함 */
+      font-size: 36px; /* 슬라이드 제목의 글자 크기를 36픽셀로 설정 */
+      font-weight: 600; /* 글자 두께를 600으로 설정하여 강조 */
+      margin: 0 auto; /* 수평 중앙 정렬을 위해 자동 여백 설정 */
+      width: 728px; /* 슬라이드 제목의 너비를 728픽셀로 설정 */
+      line-height: 54px; /* 줄 높이를 54픽셀로 설정하여 가독성을 높임 */
+      text-align: center; /* 텍스트를 중앙 정렬 */
+    }
+
+    /* 중앙 텍스트 스타일 */
+    .large-text {
+      position: absolute; /* 절대 위치 지정 */
+      top: 20%; /* 세로 중앙 정렬 */
+      left: 50%; /* 가로 중앙 정렬 */
+      transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+      font-size: 33px; /* 큰 글씨 크기 설정 */
+      font-weight: 800; /* 글자 두께를 800으로 설정 */
+      color: white; /* 글자 색상을 하얗게 설정 */
+      text-align: center; /* 텍스트 중앙 정렬 */
+    }
+
+    /* 슬라이드 이미지 스타일 */
+    .slide_img {
+      display: block; /* 블록 요소로 설정하여 마진을 적용할 수 있도록 함 */
+      margin: 42px auto 0; /* 수직 여백을 42픽셀로 설정하고, 수평 중앙 정렬 */
+    }
+
+    /* 콘텐츠 섹션 스타일 */
+    .content_section {
+      width: 1024px; /* 콘텐츠 섹션의 너비를 1024픽셀로 설정 */
+      margin: 0 auto; /* 수평으로 중앙 정렬 */
+      scroll-margin-top: 64px; /* 스크롤 시 상단 여백을 64픽셀로 설정 */
+    }
+
+    /* 히어로 섹션 스타일 */
+    #hero {
+      width: 100%; /* 전체 너비로 설정하여 반응형 디자인 구현 */
+      margin: 0 auto; /* 수평 중앙 정렬 */
+    }
+
+    /* 커리큘럼 섹션 스타일 */
+    #curriculums {
+      width: 100%; /* 전체 너비로 설정하여 반응형 디자인 구현 */
+      height: 510px; /* 섹션 높이를 510픽셀로 설정 */
+    }
+  </style>
+
+    </style>
+  </head>
+  <body>
+    <header class="title_bar_web">
+      <!-- 타이틀 바: 페이지의 상단에 고정되어 있으며, 로고와 메뉴를 포함하여 사용자에게 네비게이션 기능을 제공함 -->
+      <img class="logo" src="logo.svg" alt="logo" />
+      <nav>
+        <ul class="menu">
+          <li><a href="#curriculums">Curriculums</a></li>
+          <li><a href="#Instructors">Instructors</a></li>
+          <li><a href="#Testimonals">Testimonials</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      
+      <section id="curriculums">1</section>
+      <!-- Empowering Your Future 텍스트를 메뉴 아래로 이동 -->
+      <div id="body1">
+        <img src="1.png" alt="이미지" />
+        <!-- 첫 번째 이미지 -->
+        <div class="large-text">
+          Empowering Your Future <br />Through Innovative Development Education
+        </div>
+        <!-- 텍스트 내용 -->
+      </div>
+      
+      <!-- 새로운 콘텐츠 박스 추가 -->
+      <div class="content-box box-1024" data-size="Size: 1024px x 623px"></div>
+      <!-- 1024px 높이 박스 -->
+      
+      <script>
+// 이미지와 텍스트 배열 정의
+const images = [
+  {
+    text: "Empowering Your Future Through Innovative Development Education",
+    src: "1.png",
+  },
+  {
+    text: "Unlock Your Potential with Expert-Led, Hands-On Learning Experiences",
+    src: "2.png",
+  },
+  {
+    text: "Choose Us for a Tailored Curriculum That Prepares You for Real-World Success",
+    src: "3.svg",
+  },
+];
+
+let currentIndex = 0; // 현재 인덱스 초기화
+
+// 콘텐츠 변경 함수 정의
+function changeContent() {
+  currentIndex = (currentIndex + 1) % images.length; // 인덱스 증가 및 순환
+  const imgElement = document.querySelector("#body1 img"); // 이미지 요소 선택
+  const textElement = document.querySelector(".large-text"); // 텍스트 요소 선택
+  imgElement.src = images[currentIndex].src; // 이미지 소스 변경
+  textElement.innerHTML = images[currentIndex].text; // 텍스트 내용 변경
+
+  // 텍스트 위치 조정
+  textElement.style.top = '-280px'; // 원하는 위치로 조정 (예: 10%)
+}
+
+// 초기 텍스트 위치 설정
+document.addEventListener("DOMContentLoaded", function() {
+  const textElement = document.querySelector(".large-text");
+  textElement.style.top = '-280px'; // 초기 위치 설정
+});
+
+setInterval(changeContent, 3000); // 3초마다 콘텐츠 변경
+
+      </script>
+      
+    </script>
+    
+      <section id="Instructors">2</section>
+      <section id="Testimonals">3</section>
+      <section id="Contact">4</section>
+    </main>
+  </body>
+</html>
